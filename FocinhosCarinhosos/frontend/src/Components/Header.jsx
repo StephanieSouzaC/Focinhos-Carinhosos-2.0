@@ -5,23 +5,22 @@ import { FaUserCog, FaSearch } from 'react-icons/fa';
 
 const Header = () => {
   return (
-    <Navbar expand="lg" className="custom-navbar">
+    <Navbar expand="lg" className="header__custom-navbar">
       <div className="container-fluid d-flex justify-content-between align-items-center">
-        <Navbar.Brand href="#" className="text-left navbar-brand">
+        <Navbar.Brand href="#" className="text-left header__navbar-brand">
           FOCINHOS CARINHOSOS
-          <p className="subtext">ADMINISTRADOR</p>
+          <p className="header__subtext">ADMINISTRADOR</p>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="align-items-center">
             <Nav.Link href="#">Home</Nav.Link>
-            <NavDropdown title="Cadastro" id="cadastro-dropdown">
-              <NavDropdown.Item href="#">Option 1</NavDropdown.Item>
-              <NavDropdown.Item href="#">Option 2</NavDropdown.Item>
+            <NavDropdown title="Cadastro" id="cadastro-dropdown" className="custom-dropdown">
+              <NavDropdown.Item href="#">Animais</NavDropdown.Item>
+              <NavDropdown.Item href="#">Funcionarios</NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Buscar" id="buscar-dropdown">
-              <NavDropdown.Item href="#">Option 1</NavDropdown.Item>
-              <NavDropdown.Item href="#">Option 2</NavDropdown.Item>
+            <NavDropdown title="Buscar" id="buscar-dropdown" className="custom-dropdown">
+              <NavDropdown.Item href="#">Animais</NavDropdown.Item>
+              <NavDropdown.Item href="#">Funcionarios</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#"><FaSearch /></Nav.Link>
             <Nav.Link href="#"><FaUserCog /></Nav.Link>
@@ -33,4 +32,7 @@ const Header = () => {
 }
 
 export default Header;
+
+
+
 
