@@ -1,0 +1,28 @@
+.footer__container {
+    background: linear-gradient(to right, #76B2A4, #A3D7D5);
+    color: #000;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 20px 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__info {
+    display: flex;
+    align-items: end;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px;
+}
+
+.footer__contacts_align_icons {
+    display: flex;
+    align-items: center;
+}
