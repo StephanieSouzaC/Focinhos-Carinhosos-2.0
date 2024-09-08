@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./FormAnimal.css"; 
-import "bootstrap/dist/css/bootstrap.min.css"; 
+import "./FormAnimal.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const FormAnimal = () => {
   const [atencao, setAtencao] = useState(false);
@@ -10,55 +10,57 @@ const FormAnimal = () => {
   };
 
   return (
-    <div className="cadastro-animal-container">
-      <form onSubmit={handleSubmit} className="form-animal">
-        <h2 className="titulo-form">Cadastrar de Animais</h2>
+    <div className="form__register-animal-container">
+      <form onSubmit={handleSubmit} className="form__register-animal">
+        <h2 className="form__register-animal-title">Cadastrar de Animais</h2>
 
-        <div className="form-group">
-          <label htmlFor="nome">Nome*</label>
+        <div className="form__register-animal-group">
+          <label htmlFor="nome" className="form__register-animal-group-label">Nome*</label>
           <input
             type="text"
             id="nome"
-            className="form-control"
+            className="form__register-animal-control"
             placeholder="Ex: Chico"
             required
           />
         </div>
 
         <div className="row">
-          <div className="col-md-6 form-group">
-            <label htmlFor="tipo">Tipo*</label>
-            <select id="tipo" className="form-control" required>
+          <div className="col-md-6 form__register-animal-group ">
+            <label htmlFor="tipo" className="form__register-animal-group-label">Tipo*</label>
+            <select id="tipo" className="form__register-animal-control" required>
+              <option value="" disabled selected>Selecione o tipo de animal</option>
               <option value="cachorro">Cachorro</option>
               <option value="gato">Gato</option>
             </select>
           </div>
 
-          <div className="col-md-6 form-group">
-            <label htmlFor="idade">Idade*</label>
+          <div className="col-md-6 form__register-animal-group ">
+            <label htmlFor="idade" className="form__register-animal-group-label">Idade*</label>
             <input
-              type="text"
+              type="number"
               id="idade"
-              className="form-control"
+              className="form__register-animal-control"
               placeholder="Ex: 2"
+              min="0"
+              max="30"
               required
             />
           </div>
         </div>
 
-        <div className="form-group">
-          <label htmlFor="imagem">Link da Imagem*</label>
+        <div className="form__register-animal-group ">
+          <label htmlFor="imagem" className="form__register-animal-group-label">Link da Imagem*</label>
           <input
             type="url"
             id="imagem"
-            className="form-control"
+            className="form__register-animal-control"
             placeholder="Ex: https://exemplo.com.br"
             required
           />
         </div>
 
-        <div className="form-group form-check">
-          <label htmlFor="atencao">Atenção de Cadastro*</label>
+        <div className="form__register-animal-group form-check">
           <input
             type="checkbox"
             id="atencao"
@@ -66,6 +68,9 @@ const FormAnimal = () => {
             checked={atencao}
             onChange={() => setAtencao(!atencao)}
           />
+          <label htmlFor="atencao" className="form-check-label form__register-animal-group-label">
+            Ativação de Cadastro*
+          </label>
         </div>
 
         <button type="submit" className="btn-submit">
@@ -77,3 +82,86 @@ const FormAnimal = () => {
 };
 
 export default FormAnimal;
+
+// import React, { useState } from "react";
+// import "./FormAnimal.css"; 
+// import "bootstrap/dist/css/bootstrap.min.css"; 
+
+// const FormAnimal = () => {
+//   const [atencao, setAtencao] = useState(false);
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//   };
+
+//   return (
+//     <div className="form__register-animal-container">
+//       <form onSubmit={handleSubmit} className="form__register-animal">
+//         <h2 className="form__register-animal-title">Cadastrar de Animais</h2>
+
+//         <div className="form__register-animal-group">
+//           <label htmlFor="nome" className="form__register-animal-group-label">Nome*</label>
+//           <input
+//             type="text"
+//             id="nome"
+//             className="form__register-animal-control"
+//             placeholder="Ex: Chico"
+//             required
+//           />
+//         </div>
+
+//         <div className="row">
+//           <div className="col-md-6 form__register-animal-group ">
+//             <label htmlFor="tipo" className="form__register-animal-group-label">Tipo*</label>
+//             <select id="tipo" className="form__register-animal-control" required>
+//               <option value="" disabled selected>Selecione o tipo de animal</option>
+//               <option value="cachorro">Cachorro</option>
+//               <option value="gato">Gato</option>
+//             </select>
+//           </div>
+
+//           <div className="col-md-6 form__register-animal-group ">
+//             <label htmlFor="number" className="form__register-animal-group-label">Idade*</label>
+//             <input
+//               type="text"
+//               id="idade"
+//               className="form__register-animal-control"
+//               placeholder="Ex: 2"
+//               required
+//             />
+//           </div>
+//         </div>
+
+//         <div className="form__register-animal-group ">
+//           <label htmlFor="imagem" className="form__register-animal-group-label">Link da Imagem*</label>
+//           <input
+//             type="url"
+//             id="imagem"
+//             className="form__register-animal-control"
+//             placeholder="Ex: https://exemplo.com.br"
+//             required
+//           />
+//         </div>
+
+//         <div className="form__register-animal-group form-check">
+//           <input
+//             type="checkbox"
+//             id="atencao"
+//             className="form-check-input"
+//             checked={atencao}
+//             onChange={() => setAtencao(!atencao)}
+//           />
+//           <label htmlFor="atencao" className="form-check-label form__register-animal-group-label">
+//             Ativação de Cadastro*
+//           </label>
+//         </div>
+
+//         <button type="submit" className="btn-submit">
+//           Cadastrar
+//         </button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default FormAnimal;
