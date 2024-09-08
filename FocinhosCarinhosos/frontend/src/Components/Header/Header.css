@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&family=Poppins:wght@100;400&display=swap');
+
+:root {
+  --primary-color: #260D0D;
+  --font-family-title: 'Poor Story';
+  --font-family-principal: 'Poppins';
+}
+
+.header__custom-navbar {
+  background: linear-gradient(to right, #319190, #7BBEBD);
+  padding: 0.5em 2em;
+}
+
+.header__conteiner {
+  display: flex;
+  align-items: center;
+  margin-left: 0.8em;
+  justify-content: space-between;
+}
+
+.header__navbar-brand {
+  margin-top: 0.5em;
+}
+
+.header__navbar-title {
+  font-family: var(--font-family-title);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 0.5em;
+  color: var(--primary-color);
+}
+
+.header__subtext {
+  font-family: var(--font-family-principal);
+  font-size: 0.8rem;
+  font-weight: normal;
+  margin-top: 0.5em;
+  color: var(--primary-color);
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+
+.header__navbar .nav-link,
+.header__navbar .dropdown-toggle {
+  margin-right: 1em;
+  color: var(--primary-color) !important;
+  font-size: 1rem; 
+  transition: all 0.3s ease;
+}
+
+.header__navbar .nav-link:hover,
+.header__navbar .dropdown-item:hover {
+  color: #0c0c0c;
+  font-weight: bold; 
+  transform: translateY(-5px); 
+}
+
+.custom-dropdown.show .dropdown-menu {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  
+  .header__conteiner {
+    flex-wrap: nowrap;
+  }
+
+  .navbar-collapse {
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .navbar-brand {
+    text-align: left;
+    width: auto;
+  }
+
+  .header__custom-navbar .navbar-toggler {
+    border-color: var(--primary-color);
+  }
+
+  .navbar-toggler-icon {
+    background-color: transparent; 
+  }
+}
+
+@media (max-width: 576px) {
+  .header__navbar-title {
+    font-size: 1.5rem;
+  }
+
+  .header__navbar-subtext {
+    font-size: 0.9rem;
+  }
+
+}
+

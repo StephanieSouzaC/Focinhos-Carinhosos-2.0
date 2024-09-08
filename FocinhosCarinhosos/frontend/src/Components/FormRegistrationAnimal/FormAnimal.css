@@ -1,0 +1,90 @@
+:root {
+    --primary-color: #260D0D;
+    --font-family-title: 'Poor Story';
+    --font-family-principal: 'Poppins';
+  }
+
+.cadastro-animal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4; /* Cor de fundo */
+  }
+  
+  .form-animal {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+  }
+  
+  .titulo-form {
+    text-align: center;
+    font-size: 18px;
+    color: #4a2b2b; /* Cor do título */
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+    color: #4a2b2b; /* Cor do label */
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-control::placeholder {
+    color: #c3b1b1; /* Cor do placeholder */
+  }
+  
+  .form-check {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .form-check input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #4a2b2b; /* Cor do checkbox */
+  }
+  
+  .btn-submit {
+    background-color: #4a2b2b; /* Cor do botão */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .btn-submit:hover {
+    background-color: #3b2222; /* Cor do botão ao passar o mouse */
+  }
+  
+  .row .form-group {
+    padding-right: 10px; /* Espaçamento entre os campos "Tipo" e "Idade" */
+  }
+  
+  @media (max-width: 768px) {
+    .row .form-group {
+      padding-right: 0;
+      margin-bottom: 15px; /* Ajuste para mobile */
+    }
+  }
+  
