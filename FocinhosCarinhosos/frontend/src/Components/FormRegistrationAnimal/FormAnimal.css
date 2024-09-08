@@ -1,90 +1,90 @@
-:root {
+  :root {
     --primary-color: #260D0D;
     --font-family-title: 'Poor Story';
     --font-family-principal: 'Poppins';
   }
-
-.cadastro-animal-container {
+  
+  .form__register-animal-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f4f4f4; /* Cor de fundo */
   }
   
-  .form-animal {
-    background-color: #fff;
+  .form__register-animal {
     padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 70%;
     max-width: 100%;
   }
   
-  .titulo-form {
+  .form__register-animal-title {
     text-align: center;
-    font-size: 18px;
-    color: #4a2b2b; /* Cor do título */
-    margin-bottom: 30px;
+    font-size: 1.7rem;
+    color: var(--primary-color);
+    margin-bottom: 1em;
   }
   
-  .form-group {
-    margin-bottom: 20px;
+  .form__register-animal-group {
+    margin-bottom: 1em;
   }
   
-  .form-group label {
-    font-size: 14px;
-    color: #4a2b2b; /* Cor do label */
+  .form__register-animal-group-label {
+    font-size: 1.1rem;
+    color: var(--primary-color);
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 0.5em;
   }
   
-  .form-control {
+  .form__register-animal-control {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid var(--primary-color);
     border-radius: 5px;
+    margin-bottom: 0.8em;
   }
   
   .form-control::placeholder {
-    color: #c3b1b1; /* Cor do placeholder */
+    color: #c3b1b1;
   }
   
   .form-check {
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
   
   .form-check input[type="checkbox"] {
     width: 20px;
     height: 20px;
-    accent-color: #4a2b2b; /* Cor do checkbox */
+    accent-color: var(--primary-color);
+    margin-right: 10px;
   }
   
   .btn-submit {
-    background-color: #4a2b2b; /* Cor do botão */
+    background-color: var(--primary-color);
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    width: 100%;
+    width: 30%;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .btn-submit:hover {
-    background-color: #3b2222; /* Cor do botão ao passar o mouse */
+    background-color: #3b2222;
   }
   
   .row .form-group {
-    padding-right: 10px; /* Espaçamento entre os campos "Tipo" e "Idade" */
+    padding-right: 10px;
   }
   
   @media (max-width: 768px) {
     .row .form-group {
       padding-right: 0;
-      margin-bottom: 15px; /* Ajuste para mobile */
+      margin-bottom: 15px;
     }
   }
-  
