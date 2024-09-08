@@ -8,12 +8,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 60vh;
   }
   
   .form__register-animal {
     padding: 40px;
-    width: 70%;
+    width: 60%;
     max-width: 100%;
   }
   
@@ -43,23 +43,23 @@
     margin-bottom: 0.8em;
   }
   
-  .form-control::placeholder {
+  .form__register-animal-control::placeholder {
     color: #c3b1b1;
   }
   
-  .form-check {
+  .form__register-animal-check {
     display: flex;
     align-items: center;
   }
   
-  .form-check input[type="checkbox"] {
+  .form__register-animal-check input[type="checkbox"] {
     width: 20px;
     height: 20px;
     accent-color: var(--primary-color);
     margin-right: 10px;
   }
   
-  .btn-submit {
+  .form__register-animal-btn-submit {
     background-color: var(--primary-color);
     color: #fff;
     padding: 10px 20px;
@@ -74,17 +74,42 @@
     margin-right: auto;
   }
   
-  .btn-submit:hover {
+  .form__register-animal-btn-submit:hover {
     background-color: #3b2222;
   }
   
-  .row .form-group {
+  .row .form__register-animal-group  {
     padding-right: 10px;
   }
-  
-  @media (max-width: 768px) {
-    .row .form-group {
+
+  @media (min-width: 900px) and (max-width: 1200px){
+    .form__register-animal {
+      width: 70%;
+      max-width: 100%;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 900px){
+    .form__register-animal {
+      width: 80%;
+      max-width: 100%;
+    }
+    .form__register-animal-btn-submit{
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .form__register-animal {
+      width: 85%;
+      max-width: 100%;
+    }
+    .row .form__register-animal-group  {
       padding-right: 0;
       margin-bottom: 15px;
+    }
+
+    .form__register-animal-btn-submit{
+      width: 75%;
     }
   }
