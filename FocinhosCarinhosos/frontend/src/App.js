@@ -2,6 +2,8 @@ import './App.css';
 import Header from './Components/Header/Header.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FormAnimal from './Components/FormRegistrationAnimal/FormAnimal.jsx';
+import FormChangeAnimal from './Components/FormChangeAnimal/FormChangeAnimal.jsx';
+import Search from './Components/Search/Search.jsx';
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
         <Header></Header>
       </header>
         <FormAnimal/>
+        <FormChangeAnimal />
+        <Search/>
     </div>
   );
 }
