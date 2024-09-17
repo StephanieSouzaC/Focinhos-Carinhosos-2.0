@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./FormAnimal.css";
+import "./FormChangeAnimal.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const FormAnimal = () => {
+const FormChangeAnimal = () => {
   const [ativacao, setAtivacao] = useState(false);
 
   const handleSubmit = (e) => {
@@ -74,11 +74,11 @@ const FormAnimal = () => {
         </div>
 
         <button type="submit" className="btn-submit form__register-animal-btn-submit">
-          Cadastrar
+          Atualizar
         </button>
       </form>
     </div>
   );
 };
 
-export default FormAnimal;
+export default FormChangeAnimal;
