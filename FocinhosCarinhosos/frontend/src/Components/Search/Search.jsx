@@ -101,16 +101,96 @@
 // export default Search;
 
 
+// import React, { useState } from 'react';
+// import { Form, Button, Row, Col, Card } from 'react-bootstrap';
+// import './Search.css';
+
+// function Search() {
+//   const [showCard, setShowCard] = useState(false);
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     setShowCard(true); // Mostra o card ao clicar em "Buscar"
+//   };
+
+//   return (
+//     <div className="search__animal-container">
+//       <h1 className="search__animal-title">Buscar Animais</h1>
+//       <Form onSubmit={handleSubmit}>
+//         <Row className="mb-3">
+//           <Col xs={12} md={6}>
+//             <Form.Group controlId="formNome">
+//               <Form.Label>Nome</Form.Label>
+//               <Form.Control type="text" placeholder="Digite o nome" />
+//             </Form.Group>
+//           </Col>
+//           <Col xs={12} md={6}>
+//             <Form.Group controlId="formTipo">
+//               <Form.Label>Tipo</Form.Label>
+//               <Form.Control as="select">
+//               <option value="" disabled selected>Selecione o tipo de animal</option>
+//               <option value="cachorro">Cachorro</option>
+//               <option value="gato">Gato</option>
+//               </Form.Control>
+//             </Form.Group>
+//           </Col>
+//         </Row>
+//         <div className="text-center">
+//           <Button variant="dark" type="submit" className="search__btn">
+//             Buscar
+//           </Button>
+//         </div>
+//       </Form>
+
+//       {/* Condicional para exibir o card */}
+//       {showCard && (
+//         <div className="animal-card-container">
+//           <Card className="animal-card">
+//             <Row noGutters>
+//               <Col xs={12} md={5}>
+//                 <Card.Img
+//                   variant="top"
+//                   src="https://via.placeholder.com/150"
+//                   alt="Imagem do Animal"
+//                 />
+//               </Col>
+//               <Col xs={12} md={7} className="p-3">
+//                 <Card.Body>
+//                   <Card.Text><strong>Nome:</strong> Chico</Card.Text>
+//                   <Card.Text><strong>Tipo:</strong> Gato</Card.Text>
+//                   <Card.Text><strong>Cadastro:</strong> Ativo</Card.Text>
+//                   <Card.Text><strong>Idade:</strong> 2 anos</Card.Text>
+//                   <Card.Text><strong>Cor:</strong> Frajola</Card.Text>
+//                   <Button variant="dark">Alterar</Button>
+//                 </Card.Body>
+//               </Col>
+//             </Row>
+//           </Card>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default Search;
+
+
 import React, { useState } from 'react';
 import { Form, Button, Row, Col, Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './Search.css';
 
 function Search() {
   const [showCard, setShowCard] = useState(false);
+  const navigate = useNavigate(); // Hook para navegar
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setShowCard(true); // Mostra o card ao clicar em "Buscar"
+  };
+
+  const handleAlterarClick = (id) => {
+    navigate(`/alterar-animal/${id}`); // Redireciona para a página de alteração
   };
 
   return (
@@ -128,9 +208,9 @@ function Search() {
             <Form.Group controlId="formTipo">
               <Form.Label>Tipo</Form.Label>
               <Form.Control as="select">
-                <option>Selecione o tipo</option>
-                <option>Cachorro</option>
-                <option>Gato</option>
+                <option value="" disabled selected>Selecione o tipo de animal</option>
+                <option value="cachorro">Cachorro</option>
+                <option value="gato">Gato</option>
               </Form.Control>
             </Form.Group>
           </Col>
@@ -161,7 +241,7 @@ function Search() {
                   <Card.Text><strong>Cadastro:</strong> Ativo</Card.Text>
                   <Card.Text><strong>Idade:</strong> 2 anos</Card.Text>
                   <Card.Text><strong>Cor:</strong> Frajola</Card.Text>
-                  <Button variant="dark">Alterar</Button>
+                  <Button variant="dark" onClick={() => handleAlterarClick(1)}>Alterar</Button> {/* Supondo que o ID seja 1 */}
                 </Card.Body>
               </Col>
             </Row>
@@ -173,3 +253,4 @@ function Search() {
 }
 
 export default Search;
+
