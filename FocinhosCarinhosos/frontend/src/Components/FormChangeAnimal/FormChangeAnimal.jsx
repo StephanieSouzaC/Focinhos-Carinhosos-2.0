@@ -49,6 +49,30 @@ const FormChangeAnimal = () => {
           </div>
         </div>
 
+        <div className="row">
+          <div className="col-md-6 form__register-animal-group ">
+            <label htmlFor="porte" className="form__register-animal-group-label">Porte*</label>
+            <input
+              type="text"
+              id="porte"
+              className="form__register-animal-control"
+              placeholder="Ex: grande"
+              required
+            />
+          </div>
+
+          <div className="col-md-6 form__register-animal-group ">
+          <label htmlFor="cor" className="form__register-animal-group-label">Cor*</label>
+            <input
+              type="text"
+              id="cor"
+              className="form__register-animal-control"
+              placeholder="Ex: preto"
+              required
+            />
+          </div>
+          </div>
+
         <div className="form__register-animal-group ">
           <label htmlFor="imagem" className="form__register-animal-group-label">Link da Imagem*</label>
           <input
@@ -56,6 +80,17 @@ const FormChangeAnimal = () => {
             id="imagem"
             className="form__register-animal-control"
             placeholder="Ex: https://exemplo.com.br"
+            required
+          />
+        </div>
+
+        <div className="form__register-animal-group ">
+          <label htmlFor="observacao" className="form__register-animal-group-label">Observações*</label>
+          <input
+            type="text-area"
+            id="observacao"
+            className="form__register-animal-control"
+            placeholder="Ex: dorminhoco e companheiro"
             required
           />
         </div>
