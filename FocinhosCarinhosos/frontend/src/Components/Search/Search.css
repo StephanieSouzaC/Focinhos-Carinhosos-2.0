@@ -185,6 +185,16 @@ label {
     background-color: #502020;
   }
 
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 30px; 
+  }
+  
+
 @media (min-width: 900px) and (max-width: 1200px) {
     .search__animal-container {
         width: 70%;

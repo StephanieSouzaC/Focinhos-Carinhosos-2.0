@@ -56,12 +56,10 @@ const Header = () => {
             <NavDropdown title="Cadastro" id="cadastro-dropdown" className="custom-dropdown">
               <NavDropdown.Item as={Link} to="/cadastro-animal">Animais</NavDropdown.Item>
               <NavDropdown.Item to="#">Funcionarios</NavDropdown.Item>
-              {/* Outros cadastros podem ser adicionados aqui */}
             </NavDropdown>
             <NavDropdown title="Buscar" id="buscar-dropdown" className="custom-dropdown">
               <NavDropdown.Item as={Link} to="/buscar-animal">Animais</NavDropdown.Item>
               <NavDropdown.Item to="#">Funcionarios</NavDropdown.Item>
-              {/* Outros tipos de busca podem ser adicionados aqui */}
             </NavDropdown>
             <Nav.Link><FaUserCog /></Nav.Link>
           </Nav>
