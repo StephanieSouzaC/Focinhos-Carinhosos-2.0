@@ -194,7 +194,7 @@
 import React, { useState } from "react";
 import "./FormAnimal.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import useCadastroAnimal from "../../hooks/useCadastroAnimal.js"; // Importando o hook
+import useCadastroAnimal from "../../hooks/useCadastroAnimal.js"; 
 
 const FormAnimal = () => {
   const [animalData, setAnimalData] = useState({
@@ -223,7 +223,7 @@ const FormAnimal = () => {
     await cadastrarAnimal(animalData);
   
     if (modalSuccess) {
-      console.log("Modal de sucesso deve aparecer.");  // Adicione esta linha
+      console.log("Modal de sucesso deve aparecer."); 
         setAnimalData({
         nome: "",
         tipo: "",
@@ -366,7 +366,6 @@ const FormAnimal = () => {
         </button>
       </form>
 
-      {/* Modal de Sucesso */}
       {modalSuccess && (
         <div className="modal">
         <div className="modal-content">
@@ -377,8 +376,6 @@ const FormAnimal = () => {
       </div>
 )}
 
-
-      {/* Modal de Erro */}
       {modalError && (
         <div className="modal" onClick={closeModalError}>
           <div className="modal-content">
