@@ -186,36 +186,30 @@ function Search() {
         </div>
       </Form>
 
-      {/* Exibe os cartões dos animais encontrados */}
       {showCard && animal && animal.length > 0 && (
-        <div className="animal-card-container">
-          {animal.map((a) => (
-            <Card key={a.id} className="animal-card">
-              <Row noGutters>
-                <Col xs={12} md={5}>
-                  <Card.Img
-                    variant="top"
-                    src={a.linkImg || "https://via.placeholder.com/150"}
-                    alt="Imagem do Animal"
-                  />
-                </Col>
-                <Col xs={12} md={7} className="p-3">
-                  <Card.Body>
-                    <Card.Text><strong>Nome:</strong> {a.nome}</Card.Text>
-                    <Card.Text><strong>Tipo:</strong> {a.tipo}</Card.Text>
-                    <Card.Text><strong>Idade:</strong> {a.idade}</Card.Text>
-                    <Card.Text><strong>Porte:</strong> {a.porte}</Card.Text>
-                    <Card.Text><strong>Cor:</strong> {a.cor}</Card.Text>
-                    <Card.Text><strong>Observação:</strong> {a.observacao}</Card.Text>
-                    <Card.Text><strong>Cadastro:</strong> {a.ativo ? 'Ativo' : 'Inativo'}</Card.Text>
-                    <Button variant="dark" onClick={() => handleAlterarClick(a.id)}>Alterar</Button>
-                  </Card.Body>
-                </Col>
-              </Row>
-            </Card>
-          ))}
-        </div>
-      )}
+  <div className="animal-card-container">
+    {animal.map((a) => (
+      <Card key={a.id} className="animal-card">
+        <Card.Img
+          variant="top"
+          src={a.linkImg || "https://via.placeholder.com/150"}
+          alt="Imagem do Animal"
+        />
+        <Card.Body>
+          <Card.Text><strong>Nome:</strong> {a.nome}</Card.Text>
+          <Card.Text><strong>Tipo:</strong> {a.tipo}</Card.Text>
+          <Card.Text><strong>Idade:</strong> {a.idade}</Card.Text>
+          <Card.Text><strong>Porte:</strong> {a.porte}</Card.Text>
+          <Card.Text><strong>Cor:</strong> {a.cor}</Card.Text>
+          <Card.Text><strong>Observação:</strong> {a.observacao}</Card.Text>
+          <Card.Text><strong>Cadastro:</strong> {a.ativo ? 'Ativo' : 'Inativo'}</Card.Text>
+          <Button variant="dark" onClick={() => handleAlterarClick(a.id)}>Alterar</Button>
+        </Card.Body>
+      </Card>
+    ))}
+  </div>
+)}
+
 
       {/* Modal de erro para animais não encontrados */}
       <Modal show={showErrorModal} onHide={handleCloseModal} centered>

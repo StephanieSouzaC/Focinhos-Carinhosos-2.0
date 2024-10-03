@@ -62,11 +62,11 @@ const useCadastroAnimal = () => {
   const cadastrarAnimal = async (animalData) => {
     try {
       const response = await api.post('/Animais', animalData);
-      console.log("Resposta da API:", response); // Adicione esta linha
+      console.log("Resposta da API:", response); 
       if (response.status === 201) {
-        console.log("Cadastro de animal bem-sucedido!"); // Adicione esta linha
+        console.log("Cadastro de animal bem-sucedido!"); 
         setModalSuccess(true);
-        setErrorMessage(""); // Resetar mensagem de erro
+        setErrorMessage(""); 
       }
     } catch (error) {
       console.log("Erro capturado:", error);
@@ -87,16 +87,18 @@ const useCadastroAnimal = () => {
 
   const closeModalError = () => {
     setModalError(false);
-    setErrorMessage(""); // Limpar a mensagem de erro ao fechar o modal de erro
+    setErrorMessage(""); 
   };
 
   return {
     cadastrarAnimal,
-    modalSuccess,
+    setModalError,
     closeModalSuccess,
-    modalError,
+    setModalSuccess,
     closeModalError,
     errorMessage,
+    modalError,
+    modalSuccess
   };
 };
 
