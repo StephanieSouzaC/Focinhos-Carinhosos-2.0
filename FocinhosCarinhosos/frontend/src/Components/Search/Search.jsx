@@ -104,7 +104,9 @@
 
 // export default Search;
 
-import React, { useState } from 'react';
+
+//atual
+import React, { useState, useEffect } from 'react';
 import { Form, Button, Row, Col, Card, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import useFetchAnimal from '../../hooks/useFetchAnimal.js';
@@ -115,37 +117,44 @@ function Search() {
   const [tipo, setTipo] = useState('');
   const [showCard, setShowCard] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false); // Estado para o modal de erro
-  const { animal, error, fetchAnimalByName, fetchAnimalByType, fetchAnimalByTypeAndName } = useFetchAnimal();
+  const { animal, error, fetchAnimalByName, fetchAnimalByType, fetchAnimalByTypeAndName, fetchAnimalById } = useFetchAnimal();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (animal && animal.length > 0) {
+      setShowCard(true);
+      setShowErrorModal(false);
+    } else if (error) {
+      setShowErrorModal(true);
+      setShowCard(false);
+    }
+  }, [animal, error]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setShowCard(false);
-    setShowErrorModal(false); // Redefine o estado do modal de erro
-
-    // Realiza a busca baseada no nome e/ou tipo
-    if (nome && tipo) {
-      await fetchAnimalByTypeAndName(tipo, nome);
-    } else if (nome) {
-      await fetchAnimalByName(nome);
-    } else if (tipo) {
-      await fetchAnimalByType(tipo);
-    }
-
-    // Verifica se o animal foi encontrado
-    if (animal && animal.length > 0) {
-      setShowCard(true);
-    } else {
-      setShowErrorModal(true); // Exibe o modal de erro se não houver animal
+    setShowErrorModal(false);
+  
+    try {
+      if (nome && tipo) {
+        await fetchAnimalByTypeAndName(tipo, nome);
+      } else if (nome) {
+        await fetchAnimalByName(nome);
+      } else if (tipo) {
+        await fetchAnimalByType(tipo);
+      }
+    } catch (err) {
+      console.error('Erro na busca:', err);
+      setShowErrorModal(true);
     }
   };
 
   const handleCloseModal = () => {
-    setShowErrorModal(false); // Fecha o modal ao clicar fora ou no botão
+    setShowErrorModal(false);
   };
 
-  const handleAlterarClick = (id) => {
-    navigate(`/alterar-animal/${id}`);
+  const handleAlterarClick = (_id) => {
+    navigate(`/alterar-animal/${_id}`);
   };
 
   return (
@@ -172,9 +181,9 @@ function Search() {
                 value={tipo}
                 onChange={(e) => setTipo(e.target.value)}
               >
-                <option value="">Selecione o tipo de animal (opcional)</option>
-                <option value="cachorro">Cachorro</option>
-                <option value="gato">Gato</option>
+                <option value="">Selecione o tipo de animal</option>
+                <option value="cachorro">cachorro</option>
+                <option value="gato">gato</option>
               </Form.Control>
             </Form.Group>
           </Col>
@@ -189,13 +198,14 @@ function Search() {
       {showCard && animal && animal.length > 0 && (
   <div className="animal-card-container">
     {animal.map((a) => (
-      <Card key={a.id} className="animal-card">
+      <Card key={a._id} className="animal-card">
         <Card.Img
           variant="top"
-          src={a.linkImg || "https://via.placeholder.com/150"}
+          src={a.linkImg}
           alt="Imagem do Animal"
         />
         <Card.Body>
+          <Card.Text><strong>Id:</strong> {a._id}</Card.Text>
           <Card.Text><strong>Nome:</strong> {a.nome}</Card.Text>
           <Card.Text><strong>Tipo:</strong> {a.tipo}</Card.Text>
           <Card.Text><strong>Idade:</strong> {a.idade}</Card.Text>
@@ -203,7 +213,7 @@ function Search() {
           <Card.Text><strong>Cor:</strong> {a.cor}</Card.Text>
           <Card.Text><strong>Observação:</strong> {a.observacao}</Card.Text>
           <Card.Text><strong>Cadastro:</strong> {a.ativo ? 'Ativo' : 'Inativo'}</Card.Text>
-          <Button variant="dark" onClick={() => handleAlterarClick(a.id)}>Alterar</Button>
+          <Button variant="dark" onClick={() => handleAlterarClick(a._id)}>Alterar</Button>
         </Card.Body>
       </Card>
     ))}
@@ -308,4 +318,6 @@ export default Search;
 // }
 
 // export default Search;
+
+
 
