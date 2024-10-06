@@ -83,20 +83,19 @@
   }
 
   .modal {
-    display: flex; 
+    display: block; 
     position: fixed;
-    z-index: 1000; 
+    z-index: 10000;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    width: 50%;
+    height: 30%;
     justify-content: center;
     align-items: center;
   }
   
   .modal-content {
-    background-color: white; 
+    background-color: rgb(255, 255, 255); 
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -108,6 +107,7 @@
     float: right;
     font-size: 28px;
     font-weight: bold;
+    width: 50%;
   }
   
   .close:hover,
@@ -117,8 +117,6 @@
     cursor: pointer;
 
   }
-  
-
   
   @media (min-width: 900px) and (max-width: 1200px){
     .form__register-animal {

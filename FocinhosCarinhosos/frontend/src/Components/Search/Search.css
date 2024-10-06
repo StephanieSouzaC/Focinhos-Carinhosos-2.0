@@ -148,7 +148,7 @@ label {
     font-weight: bold;
 }
 
-.animal-card-container {
+/* .animal-card-container {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
@@ -183,6 +183,48 @@ label {
   
   .animal-card button:hover {
     background-color: #502020;
+  } */
+
+  .animal-card-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .animal-card {
+    width: 45%;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: row; /* Altera a posição da imagem para a esquerda */
+  }
+  
+  .animal-card img {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    object-fit: cover;
+    height: 100%;
+    max-width: 40%;
+  }
+  
+  .animal-card .card-body {
+    padding: 20px;
+    flex: 1;
+  }
+  
+  .animal-card button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .animal-card button:hover {
+    background-color: #502020;
   }
 
   select {
@@ -196,13 +238,21 @@ label {
   
 
 @media (min-width: 900px) and (max-width: 1200px) {
-    .search__animal-container {
-        width: 70%;
-        max-width: 100%;
-    }
-    .animal-card {
-        flex-direction: column;
-      }
+  .animal-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .animal-card {
+    width: 90%;
+    flex-direction: column; 
+  }
+
+  .animal-card img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
@@ -217,6 +267,21 @@ label {
 
     .animal-card {
         flex-direction: column;
+      }
+      .animal-card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .animal-card {
+        width: 90%;
+        flex-direction: column;
+      }
+    
+      .animal-card img {
+        border-radius: 10px;
+        max-width: 100%;
+        height: auto;
       }
 }
 
@@ -236,5 +301,20 @@ label {
 
     .animal-card {
         flex-direction: column;
+      }
+      .animal-card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .animal-card {
+        width: 90%;
+        flex-direction: column; 
+      }
+    
+      .animal-card img {
+        border-radius: 10px;
+        max-width: 100%;
+        height: auto;
       }
 }
