@@ -48,11 +48,10 @@ const useFetchAnimal = () => {
   const fetchAnimalById = async (id) => {
     setLoading(true);
     try {
-      const response = await fetch(`/api/animals/${id}`);
-      const data = await response.json();
-      setAnimal(data);
+      const response = await api.get(`/Animais/${id}`);
+      setAnimal(response.data);
     } catch (err) {
-      setError(err.message);
+      setError('Erro ao buscar o animal por ID.');
     } finally {
       setLoading(false);
     }
