@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./FormAnimal.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Modal, Button } from "react-bootstrap"; 
 import useCadastroAnimal from "../../hooks/useCadastroAnimal.js"; 
-
 
 const FormAnimal = () => {
   const [animalData, setAnimalData] = useState({
@@ -18,9 +18,7 @@ const FormAnimal = () => {
 
   const {
     cadastrarAnimal,
-    setModalSuccess, 
     closeModalSuccess,
-    setModalError,
     closeModalError,
     errorMessage,
     modalError,
@@ -52,14 +50,12 @@ const FormAnimal = () => {
       observacao: "",
       ativo: false,
     });
-
-    setModalSuccess(true);
   };
+
   return (
     <div className="form__register-animal-container">
       <form onSubmit={handleSubmit} className="form__register-animal">
         <h2 className="form__register-animal-title">Cadastrar Animais</h2>
-
         <div className="form__register-animal-group">
           <label htmlFor="nome" className="form__register-animal-group-label">Nome*</label>
           <input
@@ -86,8 +82,8 @@ const FormAnimal = () => {
               value={animalData.tipo}
             >
               <option value="" disabled>Selecione o tipo de animal</option>
-              <option value="cachorro">cachorro</option>
-              <option value="gato">gato</option>
+              <option value="cachorro">Cachorro</option>
+              <option value="gato">Gato</option>
             </select>
           </div>
 
@@ -184,29 +180,29 @@ const FormAnimal = () => {
         </button>
       </form>
 
-      {modalSuccess && (
-        <div className="modal">
-        <div className="modal-content">
-          <h2>Sucesso!</h2>
-          <p>Animal cadastrado com sucesso!</p>
-          <button onClick={closeModalSuccess}>Fechar</button>
-          &times;
-        </div>
-      </div>
-      )}
+      <Modal show={modalSuccess} onHide={closeModalSuccess}>
+        <Modal.Header closeButton>
+          <Modal.Title>Sucesso!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Animal cadastrado com sucesso!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={closeModalSuccess}>
+            Fechar
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
-      {modalError && (
-        <div className="modal" onClick={closeModalError}>
-          <div className="modal-content">
-            <span className="close" onClick={closeModalError}>
-              &times;
-            </span>
-            <h2>Erro!</h2>
-            <p>{errorMessage}</p>
-            <button onClick={closeModalError}>Tentar novamente</button>
-          </div>
-        </div>
-      )}
+      <Modal show={modalError} onHide={closeModalError}>
+        <Modal.Header closeButton>
+          <Modal.Title>Erro!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{errorMessage}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="danger" onClick={closeModalError}>
+            Tentar novamente
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
