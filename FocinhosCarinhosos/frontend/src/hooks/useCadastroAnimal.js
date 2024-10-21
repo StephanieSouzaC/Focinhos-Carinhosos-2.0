@@ -9,9 +9,7 @@ const useCadastroAnimal = () => {
   const cadastrarAnimal = async (animalData) => {
     try {
       const response = await api.post('/Animais', animalData);
-      console.log("Resposta da API:", response); 
       if (response.status === 201) {
-        console.log("Cadastro de animal bem-sucedido!"); 
         setModalSuccess(true);
         setErrorMessage(""); 
       }
@@ -23,7 +21,6 @@ const useCadastroAnimal = () => {
         setErrorMessage("Erro de conexão com a API. Verifique se a API está rodando.");
       }
       setModalError(true);
-      console.log("Estado modalError:", true);
     }
   };
   

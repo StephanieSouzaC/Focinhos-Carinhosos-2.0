@@ -68,11 +68,11 @@ const FormChangeAnimal = () => {
     } catch (err) {
       setModalMessage("Erro ao atualizar cadastro: " + err.message); 
     } finally {
-      setShowModal(true); // Exibe o modal
+      setShowModal(true); 
     }
   };
 
-  const handleCloseModal = () => setShowModal(false); // Fecha o modal
+  const handleCloseModal = () => setShowModal(false); 
 
   return (
     <div className="form__register-animal-container">
