@@ -29,7 +29,7 @@
 // export default useUpdateAnimal;
 
 import { useState } from "react";
-import api from "../configApi/api"; // Ajuste o caminho conforme necessário
+import api from "../configApi/api"; 
 
 const useUpdateAnimal = () => {
   const [loading, setLoading] = useState(false);
