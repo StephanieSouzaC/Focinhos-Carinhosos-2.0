@@ -64,7 +64,7 @@ label {
     font-weight: bold;
 }
 
-  .animal-card-container {
+  /* .animal-card-container {
     margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
@@ -104,7 +104,92 @@ label {
   
   .animal-card button:hover {
     background-color: #502020;
+  } */
+
+  .animal-card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
   }
+  
+  .animal-card {
+    width: 300px;
+    background-color: #f1f1f1; 
+    border-radius: 17px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s; 
+  }
+  
+  .animal-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+  }
+  
+  .animal-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; 
+  }
+  
+  .animal-card .card-body {
+    padding: 20px;
+  }
+  
+  .animal-card .card-text {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #260d0d; 
+  }
+  
+  .animal-card .card-text strong {
+    font-weight: bold;
+  }
+  
+  .animal-card .card-text:last-child {
+    margin-bottom: 20px;
+  }
+  
+  .animal-card button {
+    background-color: #260d0d; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px; 
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .animal-card button:hover {
+    background-color: #401818; 
+  }
+  
+  .search__animal-container {
+    text-align: center;
+  }
+  
+  .search__animal-title {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #260d0d;
+  }
+  
+  .search__btn {
+    margin-top: 20px;
+    background-color: #260d0d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  
+  .search__btn:hover {
+    background-color: #401818;
+  }
+  
 
   select {
     -webkit-appearance: none;
