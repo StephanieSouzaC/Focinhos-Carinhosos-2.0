@@ -533,7 +533,6 @@ const FormChangeAnimal = () => {
     ativo: false,
   });
 
-  // Fetch dos dados do animal na montagem do componente
   useEffect(() => {
     const fetchAnimal = async () => {
       if (id) {
@@ -548,7 +547,6 @@ const FormChangeAnimal = () => {
     fetchAnimal();
   }, [id]);
 
-  // Atualiza os dados do formulário com os dados do animal quando o animal for carregado
   useEffect(() => {
     if (animal) {
       setAnimalData({
