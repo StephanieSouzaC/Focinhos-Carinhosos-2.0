@@ -199,14 +199,11 @@ function Search() {
                 alt="Imagem do Animal"
               />
               <Card.Body>
-                <Card.Text><strong>Id:</strong> {a._id}</Card.Text>
                 <Card.Text><strong>Nome:</strong> {a.nome}</Card.Text>
                 <Card.Text><strong>Tipo:</strong> {a.tipo}</Card.Text>
-                <Card.Text><strong>Idade:</strong> {a.idade}</Card.Text>
-                <Card.Text><strong>Porte:</strong> {a.porte}</Card.Text>
-                <Card.Text><strong>Cor:</strong> {a.cor}</Card.Text>
-                <Card.Text><strong>Observação:</strong> {a.observacao}</Card.Text>
                 <Card.Text><strong>Cadastro:</strong> {a.ativo ? 'Ativo' : 'Inativo'}</Card.Text>
+                <Card.Text><strong>Idade:</strong> {a.idade}</Card.Text>
+                <Card.Text><strong>Cor:</strong> {a.cor}</Card.Text>
                 <Button variant="dark" onClick={() => handleAlterarClick(a._id)}>Alterar</Button>
               </Card.Body>
             </Card>
