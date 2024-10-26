@@ -60,6 +60,8 @@
 label {
   color: var(--primary-color);
   font-weight: bold;
+  display: block;
+  text-align: start;
 }
 
 .animal-card-container {
